@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Victor Nascimento| Portfólio</title>
+    <!-- Tailwind CSS para Estilização -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#037A92',
+                            600: '#025060',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Classes personalizadas para animação de revelação */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-500 selection:text-white">
+
+    <!-- Navegação / Header -->
+    <header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#inicio" class="text-2xl font-bold text-brand-600 tracking-tighter">VHN<span class="text-slate-800">.</span></a>
+                </div>
+                
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#resumo" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Resumo</a>
+                    <a href="#projetos" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Projetos</a>
+                    <a href="#skills" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Skills</a>
+                    <a href="#experiencia" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Experiência</a>
+                    <a href="#contato" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Contato</a>
+                </nav>
+
+                <!-- Botão Menu Mobile -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#resumo" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Resumo</a>
+                <a href="#projetos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Projetos</a>
+                <a href="#skills" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Skills</a>
+                <a href="#experiencia" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Experiência</a>
+                <a href="#contato" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:text-brand-600 hover:bg-slate-50">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Container Principal -->
+    <main class="pt-16">
+        
+        <!-- 1. Título com Nome (Hero Section) -->
+        <section id="inicio" class="min-h-[90vh] flex items-center bg-gradient-to-br from-slate-50 to-brand-50 relative overflow-hidden">
+            <!-- Padrão de fundo decorativo -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-brand-100 blur-3xl opacity-50 z-0"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-100 blur-3xl opacity-50 z-0"></div>
+            
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left reveal">
+                    <p class="text-brand-600 font-semibold tracking-wide uppercase mb-2">Olá, eu sou</p>
+                    <h1 class="text-5xl sm:text-6xl font-extrabold text-slate-900 leading-tight mb-4">
+                        Victor Nascimento
+                    </h1>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-600 mb-6">
+                        Cientista de Dados
+                    </h2>
+                    <p class="text-lg text-slate-600 mb-8 max-w-xl mx-auto md:mx-0">
+                        "Os números não têm como falar por si mesmos. Nós falamos por eles. Nós lhes atribuímos significado."
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                        <a href="https://drive.google.com/file/d/1Z5bauIPTJd5cr2eKts98OkMjVVMF7wPY/view" class="px-8 py-3 bg-brand-600 text-white font-medium rounded-lg shadow-md hover:bg-brand-700 transition-colors text-center" target="_blank"">
+                            Download CV
+                        </a>
+                        <a href="#contato" class="px-8 py-3 bg-white text-slate-700 border border-slate-300 font-medium rounded-lg shadow-sm hover:bg-slate-50 transition-colors text-center">
+                            Entrar em Contato
+                        </a>
+                    </div>
+                    <!-- Redes Sociais -->
+                    <div class="mt-8 flex gap-4 justify-center md:justify-start">
+                        <a href="https://www.linkedin.com/in/victor-hugo-do-nascimento-aaa914217/" class="text-slate-400 hover:text-brand-600 text-2xl transition-colors" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/VictorHNascimento" class="text-slate-400 hover:text-brand-600 text-2xl transition-colors" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Placeholder para Foto -->
+                <div class="hidden md:flex justify-center reveal">
+                    <div class="relative w-80 h-80 rounded-full border-4 border-white shadow-xl overflow-hidden bg-slate-200 flex items-center justify-center">
+                        <!-- <i class="fa-solid fa-user-astronaut text-8xl text-slate-400"></i>-->
+                        <!-- Sugestão: Substitua o ícone acima pela sua foto usando a tag img -->
+                        <img src="img/profile.png" alt="[O Seu Nome]" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Resumo -->
+        <section id="resumo" class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-bold text-slate-900 inline-block relative">
+                        Resumo
+                        <span class="absolute bottom-0 left-0 w-full h-1 bg-brand-500 rounded -mb-2"></span>
+                    </h2>
+                </div>
+                <div class="prose prose-lg text-slate-600 mx-auto text-justify sm:text-center leading-relaxed">
+                    <p>
+                        Profissional em início de carreira na área de Dados, com formação em Ciência de Dados e experiência prática em análise, machine learning e suporte técnico. Atuo com Python, SQL e Power BI, desenvolvendo soluções para tratamento, análise e modelagem de dados, sempre com foco em qualidade e geração de insights.
+
+Tenho perfil analítico, organizado e orientado a resultados, buscando transformar dados em valor para o negócio.
+                    </p>
+                    <p class="mt-4">
+                        Iniciei minha jornada em tecnologia com formação técnica e evoluí para Ciência de Dados, desenvolvendo projetos de machine learning e participando de pesquisa científica premiada. Também adquiri experiência prática com resolução de problemas e análise de dados no suporte técnico.
+
+Meu objetivo é crescer na área de Dados, atuando com análise e modelagem, e evoluir para posições como Cientista de Dados.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Portfólio de Projetos -->
+        <section id="projetos" class="py-20 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-3xl font-bold text-slate-900 inline-block relative">
+                        Projetos
+                        <span class="absolute bottom-0 left-0 w-full h-1 bg-brand-500 rounded -mb-2"></span>
+                    </h2>
+                    <p class="mt-6 text-slate-600 max-w-2xl mx-auto">Alguns dos meus trabalhos recentes e de destaque envolvendo dados.</p>
+                </div>
+
+                <div class="text-center mb-8 reveal">
+                    <h5 class="text-3xl font-bold text-slate-900 inline-block relative">
+                        Machine Learning
+                    </h5>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300 group reveal" style="transition-delay: 100ms;">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden flex items-center justify-center">
+                            <img src="img/Lis.png" alt="Tunesight" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Tunesight</h3>
+                            <p class="text-slate-600 mb-4 text-sm">Desenvolvi meu Trabalho de Graduação pela Fatec Ourinhos com foco em resolver um problema real da indústria musical: a dificuldade de reconhecimento de artistas independentes.
+O projeto consistiu na criação de um modelo de Machine Learning capaz de estimar o potencial de sucesso de músicas, integrado a um chatbot para facilitar a interação e democratizar o acesso à análise de dados.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Machine Learning</span>
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Python</span>
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">ETL</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://t.me/tunesight_bot" class="text-brand-600 font-medium text-sm hover:text-brand-800" target="_blank"><i class="fa-brands fa-telegram mr-1"></i> Chatbot</a>
+                                <a href="https://3a6771c6-5820-4ce4-bc15-9ed497a821f8.filesusr.com/ugd/8281c1_584d8387d54b48ca8cdcf54e2a18e674.pdf" class="text-slate-600 font-medium text-sm hover:text-slate-800" target="_blank"><i class="fa fa-file-text mr-1"></i> Artigo</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300 group reveal" style="transition-delay: 100ms;">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden flex items-center justify-center">
+                            <img src="img/review.png" alt="Similaridade de Reviews" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Similaridade de Reviews com NLP</h3>
+                            <p class="text-slate-600 mb-4 text-sm">Desenvolvi meu Trabalho de Graduação pela Fatec Ourinhos com foco em resolver um problema real da indústria musical: a dificuldade de reconhecimento de artistas independentes.
+O projeto consistiu na criação de um modelo de Machine Learning capaz de estimar o potencial de sucesso de músicas, integrado a um chatbot para facilitar a interação e democratizar o acesso à análise de dados.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">NLP</span>
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Python</span>
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Machine Learning</span>
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Gradio</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://huggingface.co/spaces/VictorNascimento47/Review_Similaridade" class="text-brand-600 font-medium text-sm hover:text-brand-800" target="_blank"><i class="fa-solid fa-globe mr-1"></i>Live</a>
+                                <a href="https://github.com/VictorHNascimento/Similaridade_Sentencas" class="text-slate-600 font-medium text-sm hover:text-slate-800" target="_blank"><i class="fa-brands fa-github mr-1"></i>Github</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300 group reveal" style="transition-delay: 100ms;">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden flex items-center justify-center">
+                            <img src="img/ner.png" alt="Reconhecimento de Entidades Nomeadas" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Reconhecimento de Entidades Nomeadas (NER)</h3>
+                            <p class="text-slate-600 mb-4 text-sm">Desenvolvi um modelo de Reconhecimento de Entidades Nomeadas (NER) aplicado a documentos jurídicos, utilizando spaCy.
+O projeto envolveu todo o pipeline de NLP, desde a preparação manual dos dados até a disponibilização do modelo em uma aplicação web interativa com Streamlit, permitindo a identificação automática de entidades como jurisprudências, legislações, pessoas, datas, organizações e locais.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">NLP</span>
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Python</span>
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Machine Learning</span>
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Streamlit</span>
+                            </div>
+                            <div class="flex gap-4">
+                                <a href="https://victorhnascimento-modeloner-documentosjuridicos.streamlit.app" class="text-brand-600 font-medium text-sm hover:text-brand-800" target="_blank"><i class="fa-solid fa-globe mr-1"></i>Live</a>
+                                <a href="https://github.com/VictorHNascimento/PLN-Reconhecimento-Entidades-Nomeadas" class="text-slate-600 font-medium text-sm hover:text-slate-800" target="_blank"><i class="fa-brands fa-github mr-1"></i>Github</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   <div class="text-center mb-8 mt-16 reveal">
+                    <h5 class="text-3xl font-bold text-slate-900 inline-block relative">
+                        Business Intelligence
+                    </h5>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300 group reveal">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden flex items-center justify-center">
+                            <!-- i class="fa-solid fa-chart-line text-5xl text-slate-400 group-hover:scale-110 transition-transform duration-500"></i> -->
+                            <img src="img/rh.png" alt="Dashboard RH - Image" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Dashboard RH</h3>
+                            <p class="text-slate-600 mb-4 text-sm">Dashboard desenvolvido para análise de indicadores de Recursos Humanos. O projeto envolve visualizações interativas que auxiliam na gestão de pessoas e na tomada de decisões estratégicas.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Power BI</span>
+                            </div>
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiMzRlN2QwZDAtMWQzZS00MWYyLWJmNGYtZTdmZjk4MDY5MTU2IiwidCI6IjJhY2Y5Y2M3LTA4M2QtNDI1Ny1iMDI4LWU2NTA0OTBmZjU5OSJ9" class="text-brand-600 font-medium text-sm hover:text-brand-800 flex items-center" target="_blank">
+                                Ver Dashboard <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300 group reveal">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden flex items-center justify-center">
+                            <!-- i class="fa-solid fa-chart-line text-5xl text-slate-400 group-hover:scale-110 transition-transform duration-500"></i> -->
+                            <img src="img/financeiro.png" alt="Dashboard RH - Image" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Dashboard Financeiro</h3>
+                            <p class="text-slate-600 mb-4 text-sm">Painel voltado ao acompanhamento da performance financeira, permitindo uma visão clara e dinâmica da saúde financeira da organização.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Power BI</span>
+                            </div>
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiN2QwN2VjNTItN2MzNC00MzExLTgzODItZDUwOWViMTliMDViIiwidCI6IjJhY2Y5Y2M3LTA4M2QtNDI1Ny1iMDI4LWU2NTA0OTBmZjU5OSJ9" class="text-brand-600 font-medium text-sm hover:text-brand-800 flex items-center" target="_blank">
+                                Ver Dashboard <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300 group reveal">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden flex items-center justify-center">
+                            <!-- i class="fa-solid fa-chart-line text-5xl text-slate-400 group-hover:scale-110 transition-transform duration-500"></i> -->
+                            <img src="img/producao.png" alt="Dashboard RH - Image" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Dashboard Produção</h3>
+                            <p class="text-slate-600 mb-4 text-sm">Dashboard focado no monitoramento de indicadores de produção. O projeto transforma dados operacionais em insights acionáveis, contribuindo para a otimização de processos e melhoria da produtividade.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Power BI</span>
+                            </div>
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiNDAzYjAwNGMtZGQxYi00MjY3LTkzOWMtNGQxM2Y0YTk0NTZhIiwidCI6IjJhY2Y5Y2M3LTA4M2QtNDI1Ny1iMDI4LWU2NTA0OTBmZjU5OSJ9" class="text-brand-600 font-medium text-sm hover:text-brand-800 flex items-center" target="_blank">
+                                Ver Dashboard <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden hover:shadow-xl transition-all duration-300 group reveal">
+                        <div class="h-48 bg-slate-200 relative overflow-hidden flex items-center justify-center">
+                            <!-- i class="fa-solid fa-chart-line text-5xl text-slate-400 group-hover:scale-110 transition-transform duration-500"></i> -->
+                            <img src="img/vendas.png" alt="Dashboard RH - Image" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Dashboard Vendas</h3>
+                            <p class="text-slate-600 mb-4 text-sm">Painel desenvolvido para análise de desempenho comercial, com indicadores como faturamento.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                               <span class="px-2 py-1 bg-brand-50 text-brand-700 text-xs font-semibold rounded">Power BI</span>
+                            </div>
+                            <a href="https://app.powerbi.com/view?r=eyJrIjoiZTI2YWNhMzEtYzcyYS00MWUzLTljYWUtZTg4Y2QwNGJmYjAxIiwidCI6IjJhY2Y5Y2M3LTA4M2QtNDI1Ny1iMDI4LWU2NTA0OTBmZjU5OSJ9" class="text-brand-600 font-medium text-sm hover:text-brand-800 flex items-center" target="_blank">
+                                Ver Dashboard <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+        <!-- 4. Skills & Tecnologias -->
+<section id="skills" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 reveal">
+            <h2 class="text-3xl font-bold text-slate-900 inline-block relative">
+                Skills & Tecnologias
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-brand-500 rounded -mb-2"></span>
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+            <!-- Hard Skills Dados -->
+            <div class="reveal">
+                <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
+                    <i class="fa-solid fa-database text-brand-500 mr-3"></i> Data & BI
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium text-slate-700">Python (Data Science)</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-1">
+                            <div class="bg-brand-500 h-1 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium text-slate-700">SQL Server</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-1">
+                            <div class="bg-brand-500 h-1 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium text-slate-700">Power BI</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-1">
+                            <div class="bg-brand-500 h-1 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hard Skills Dev -->
+            <div class="reveal" style="transition-delay: 100ms;">
+                <h3 class="text-xl font-bold text-slate-800 mb-6 flex items-center">
+                    <i class="fa-solid fa-code text-brand-500 mr-3"></i> Desenvolvimento & Machine Learning
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium text-slate-700">Machine Learning</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-1">
+                            <div class="bg-brand-500 h-1 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium text-slate-700">APIs com Flask</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-1">
+                            <div class="bg-brand-500 h-1 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="text-sm font-medium text-slate-700">Git & GitHub</span>
+                        </div>
+                        <div class="w-full bg-slate-200 rounded-full h-1">
+                            <div class="bg-brand-500 h-1 rounded-full" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Soft Skills & Outras Tecnologias -->
+        <div class="mt-16 max-w-4xl mx-auto reveal">
+            <h3 class="text-center text-lg font-semibold text-slate-700 mb-6">Outras Ferramentas & Soft Skills</h3>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm shadow-sm border border-slate-200">SQL</span>
+                <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm shadow-sm border border-slate-200">Análise de Dados</span>
+                <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm shadow-sm border border-slate-200">Resolução de Problemas</span>
+                <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm shadow-sm border border-slate-200">Trabalho em Equipe</span>
+                <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm shadow-sm border border-slate-200">Comunicação</span>
+                <span class="px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm shadow-sm border border-slate-200">Pensamento Analítico</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. Formação Acadêmica & 6. Experiências -->
+<section id="experiencia" class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 gap-16">
+            
+            <!-- Experiências -->
+            <div class="reveal">
+                <h2 class="text-2xl font-bold text-slate-900 mb-8 inline-block relative">
+                    <i class="fa-solid fa-briefcase text-brand-500 mr-2"></i> Experiências
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-brand-500 rounded -mb-2"></span>
+                </h2>
+                
+                <div class="relative border-l-2 border-slate-200 pl-6 space-y-8 ml-3">
+                    <div class="relative">
+                        <div class="absolute w-4 h-4 bg-brand-500 rounded-full -left-[1.95rem] top-1 border-4 border-slate-50"></div>
+                        <h3 class="text-lg font-bold text-slate-800">Analista de Suporte Técnico</h3>
+                        <h4 class="text-brand-600 font-medium text-sm mb-1">J N Moura Soluções Tecnológicas | Abril/2022 - Presente</h4>
+                        <p class="text-slate-600 text-sm">
+                            Atuação na resolução de problemas técnicos e análise de inconsistências via SQL Server, garantindo integridade e confiabilidade das informações. 
+                            Padronização dos atendimentos e contribuição para alta performance da equipe (7x equipe do mês). 
+                            Realizado mais de 7.000 chamados com foco em eficiência e experiência do cliente, mantendo índice médio de avaliação de aproximadamente 48%.
+                        </p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute w-4 h-4 bg-slate-300 rounded-full -left-[1.95rem] top-1 border-4 border-slate-50"></div>
+                        <h3 class="text-lg font-bold text-slate-800">Projetos Acadêmicos em Data Science</h3>
+                        <h4 class="text-brand-600 font-medium text-sm mb-1">FATEC Ourinhos | 2022 - 2024</h4>
+                        <p class="text-slate-600 text-sm">
+                            Desenvolvimento de projetos com foco em Machine Learning, análise de dados e criação de pipelines em Python, incluindo API com Flask e integração com chatbot.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formação -->
+            <div class="reveal" style="transition-delay: 100ms;">
+                <h2 class="text-2xl font-bold text-slate-900 mb-8 inline-block relative">
+                    <i class="fa-solid fa-graduation-cap text-brand-500 mr-2"></i> Formação Acadêmica
+                    <span class="absolute bottom-0 left-0 w-full h-1 bg-brand-500 rounded -mb-2"></span>
+                </h2>
+                
+                <div class="relative border-l-2 border-slate-200 pl-6 space-y-8 ml-3">
+                    <div class="relative">
+                        <div class="absolute w-4 h-4 bg-brand-500 rounded-full -left-[1.95rem] top-1 border-4 border-slate-50"></div>
+                        <h3 class="text-lg font-bold text-slate-800">Tecnólogo em Ciência de Dados</h3>
+                        <h4 class="text-brand-600 font-medium text-sm mb-1">Fatec Ourinhos | 2022 - 2024</h4>
+                        <p class="text-slate-600 text-sm">Foco em análise de dados, machine learning e modelagem estatística.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute w-4 h-4 bg-slate-300 rounded-full -left-[1.95rem] top-1 border-4 border-slate-50"></div>
+                        <h3 class="text-lg font-bold text-slate-800">Técnico em Desenvolvimento de Sistemas</h3>
+                        <h4 class="text-brand-600 font-medium text-sm mb-1">ETEC Jacinto Ferreira de Sá | 2020 - 2021</h4>
+                        <p class="text-slate-600 text-sm">Base em programação, desenvolvimento e lógica computacional.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute w-4 h-4 bg-slate-300 rounded-full -left-[1.95rem] top-1 border-4 border-slate-50"></div>
+                        <h3 class="text-lg font-bold text-slate-800">Técnico em Informatica para Internet</h3>
+                        <h4 class="text-brand-600 font-medium text-sm mb-1">ETEC Jacinto Ferreira de Sá | 2019 - 2021</h4>
+                        <p class="text-slate-600 text-sm">Base em programação, desenvolvimento web e SQL.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 7. Cursos -->
+<section id="cursos" class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 reveal">
+            <h2 class="text-3xl font-bold text-slate-900 inline-block relative">
+                Cursos & Certificações
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-brand-500 rounded -mb-2"></span>
+            </h2>
+        </div>
+
+        <div class="text-center mb-6 reveal">
+                    <h5 class="text-2xl font-bold text-slate-900 inline-block relative">
+                        Python e Análise de Dados
+                    </h5>
+        </div> 
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto reveal mb-12">
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-blue-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Python para Data Science: primeiros passos</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-blue-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Python para Data Science: funções, estruturas e exceções</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-blue-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">NumPy: análise numérica eficiente com Python</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-blue-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Pandas: limpeza e tratamento de dados</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-blue-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Pandas: transformação e manipulação de dados</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-blue-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Python e APIs (Requests)</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-blue-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Power BI Completo – Do Básico ao Avançado</h4>
+                    <p class="text-xs">Udemy</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-blue-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Estatística com Python: frequências e medidas</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-6 reveal">
+                    <h5 class="text-2xl font-bold text-slate-900 inline-block relative">
+                        Banco de Dados / Engenharia de Dados
+                    </h5>
+        </div> 
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto reveal mb-12">
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-indigo-600 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Modelagem de banco de dados relacional (SQL)</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-indigo-600 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">MongoDB: banco de dados NoSQL</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-indigo-600 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Pipeline de dados: Python + MongoDB + MySQL</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-indigo-600 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Apache Airflow: pipeline de dados</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-indigo-600 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Apache Spark com Airflow</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-6 reveal">
+                    <h5 class="text-2xl font-bold text-slate-900 inline-block relative">
+                        Machine Learning / Cloud
+                    </h5>
+        </div> 
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto reveal mb-12">
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-purple-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Machine Learning A-Z</h4>
+                    <p class="text-xs">Udemy</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-purple-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">AWS Academy – Machine Learning Foundations</h4>
+                    <p class="text-xs">Amazon Web Services</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-purple-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Introduction to Data Science</h4>
+                    <p class="text-xs">Cisco Networking Academy</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-6 reveal">
+                    <h5 class="text-2xl font-bold text-slate-900 inline-block relative">
+                        NLP/IA/LLM
+                    </h5>
+        </div> 
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto reveal mb-12">
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-pink-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">NLP: análise de sentimentos</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-pink-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">NLP: entidades nomeadas (NER)</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-pink-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">NLP: similaridade de sentenças</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-pink-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">NLP: chatbot com LLM</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-pink-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Hugging Face + Transfer Learning em NLP</h4>
+                    <p class="text-xs">Alura</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-pink-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">GEN IA – Inteligência Artificial Generativa</h4>
+                    <p class="text-xs">Awari</p>
+                </div>
+            </div>
+
+            <div class="flex items-center p-4 border rounded-lg bg-slate-50">
+                <i class="fa-solid fa-certificate text-3xl text-pink-500 mr-4"></i>
+                <div>
+                    <h4 class="font-bold text-sm">Engenharia de Prompt para IA</h4>
+                    <p class="text-xs">USP/ESALQ</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 8. Contato -->
+<section id="contato" class="py-20 bg-slate-900 text-white relative">
+    <div class="text-center">
+        <h2 class="text-3xl font-bold mb-6">Vamos Conversar?</h2>
+
+        <div class="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+            <a href="mailto:contato.victorhnascimento@gmail.com" class="flex items-center justify-center gap-3 px-6 py-4 bg-slate-800 rounded-xl">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://wa.me/5514999016668" class="flex items-center justify-center gap-3 px-6 py-4 bg-slate-800 rounded-xl">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/victor-hugo-do-nascimento-aaa914217" target="_blank" class="flex items-center justify-center gap-3 px-6 py-4 bg-slate-800 rounded-xl">
+                <i class="fa-brands fa-linkedin-in text-xl"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-950 text-slate-500 py-6 text-center text-sm">
+        <p>&copy; 2026 Victor Hugo do Nascimento.</p>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script>
+        // Lógica do Menu Mobile
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Alternar menu
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fechar menu ao clicar num link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Efeito sombra no Header ao rolar
+        const header = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Animação de Scroll (Reveal elements)
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // Distância do topo antes de revelar
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        
+        // Iniciar verificação de reveal ao carregar a página e ao fazer scroll
+        window.addEventListener("scroll", reveal);
+        // Chama uma vez para exibir elementos que já estão na tela no load
+        reveal();
+    </script>
+</body>
+</html>
